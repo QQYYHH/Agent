@@ -1,0 +1,115 @@
+{
+    "messages": [
+        {
+            "content": "You are a helpful assistant tasked with performing arithmetic on a set of inputs.",
+            "role": "system"
+        },
+        {
+            "content": "Calculate (3 + 5) * 8",
+            "role": "user"
+        },
+        {
+            "content": null,
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "id": "chatcmpl-tool-9cfff31470c8d39b",
+                    "function": {
+                        "name": "add",
+                        "arguments": "{\"a\": 3, \"b\": 5}"
+                    }
+                },
+                {
+                    "type": "function",
+                    "id": "chatcmpl-tool-afe2dd0e7aedad5f",
+                    "function": {
+                        "name": "multiply",
+                        "arguments": "{\"a\": 8, \"b\": 8}"
+                    }
+                }
+            ]
+        },
+        {
+            "content": "8",
+            "role": "tool",
+            "tool_call_id": "chatcmpl-tool-9cfff31470c8d39b"
+        },
+        {
+            "content": "64",
+            "role": "tool",
+            "tool_call_id": "chatcmpl-tool-afe2dd0e7aedad5f"
+        }
+    ],
+    "model": "Qwen/Qwen3-8B",
+    "stream": false,
+    "temperature": 0.6,
+    "tools": [
+        {
+            "type": "function",
+            "function": {
+                "name": "add",
+                "description": "Adds `a` and `b`.\n\n    Args:\n        a: First int\n        b: Second int",
+                "parameters": {
+                    "properties": {
+                        "a": {
+                            "type": "integer"
+                        },
+                        "b": {
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "a",
+                        "b"
+                    ],
+                    "type": "object"
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "multiply",
+                "description": "Multiply `a` and `b`.\n\n    Args:\n        a: First int\n        b: Second int",
+                "parameters": {
+                    "properties": {
+                        "a": {
+                            "type": "integer"
+                        },
+                        "b": {
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "a",
+                        "b"
+                    ],
+                    "type": "object"
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "divide",
+                "description": "Divide `a` and `b`.\n\n    Args:\n        a: First int\n        b: Second int",
+                "parameters": {
+                    "properties": {
+                        "a": {
+                            "type": "integer"
+                        },
+                        "b": {
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "a",
+                        "b"
+                    ],
+                    "type": "object"
+                }
+            }
+        }
+    ]
+}

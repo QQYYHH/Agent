@@ -1,0 +1,37 @@
+{
+    "id": "chatcmpl-9e2c07f9773531b6",
+    "object": "chat.completion",
+    "created": 1767593894,
+    "model": "Qwen/Qwen3-8B",
+    "choices": [
+        {
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": "\n\nThe result of (3 + 5) * 8 is 64.",
+                "refusal": null,
+                "annotations": null,
+                "audio": null,
+                "function_call": null,
+                "tool_calls": [],
+                "reasoning": "\nOkay, let's see. The user asked to calculate (3 + 5) * 8. First, I need to handle the addition inside the parentheses. So I called the add function with a=3 and b=5. That gives 8. Then, I need to multiply that result by 8. Wait, the user wrote (3 + 5) * 8, so the second operand is 8. So after getting 8 from the addition, I should multiply by 8. But in my previous tool calls, I added 3+5 first, which is correct. Then the next step is to take the result of that addition (which is 8) and multiply it by 8. So the multiply function should have a=8 and b=8. That would give 64. The user's final answer should be 64. Let me check if the tool responses were correct. The add function returned 8, then the multiply function with 8 and 8 gives 64. Yep, that's right. So the final answer is 64.\n",
+                "reasoning_content": "\nOkay, let's see. The user asked to calculate (3 + 5) * 8. First, I need to handle the addition inside the parentheses. So I called the add function with a=3 and b=5. That gives 8. Then, I need to multiply that result by 8. Wait, the user wrote (3 + 5) * 8, so the second operand is 8. So after getting 8 from the addition, I should multiply by 8. But in my previous tool calls, I added 3+5 first, which is correct. Then the next step is to take the result of that addition (which is 8) and multiply it by 8. So the multiply function should have a=8 and b=8. That would give 64. The user's final answer should be 64. Let me check if the tool responses were correct. The add function returned 8, then the multiply function with 8 and 8 gives 64. Yep, that's right. So the final answer is 64.\n"
+            },
+            "logprobs": null,
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "token_ids": null
+        }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+        "prompt_tokens": 448,
+        "total_tokens": 697,
+        "completion_tokens": 249,
+        "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+}

@@ -1,0 +1,54 @@
+{
+    "id": "chatcmpl-b6eafacdb212ae45",
+    "object": "chat.completion",
+    "created": 1767593888,
+    "model": "Qwen/Qwen3-8B",
+    "choices": [
+        {
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": null,
+                "refusal": null,
+                "annotations": null,
+                "audio": null,
+                "function_call": null,
+                "tool_calls": [
+                    {
+                        "id": "chatcmpl-tool-9cfff31470c8d39b",
+                        "type": "function",
+                        "function": {
+                            "name": "add",
+                            "arguments": "{\"a\": 3, \"b\": 5}"
+                        }
+                    },
+                    {
+                        "id": "chatcmpl-tool-afe2dd0e7aedad5f",
+                        "type": "function",
+                        "function": {
+                            "name": "multiply",
+                            "arguments": "{\"a\": 8, \"b\": 8}"
+                        }
+                    }
+                ],
+                "reasoning": "\nOkay, let's see. The user wants me to calculate (3 + 5) * 8. Hmm, first I need to figure out the order of operations here. The expression inside the parentheses is 3 + 5, which should be done first. So 3 plus 5 equals 8. Then, I multiply that result by 8. Wait, so that's 8 multiplied by 8. But wait, maybe I should check if the functions available can handle this.\n\nLooking at the tools provided, there's add, multiply, and divide functions. The add function takes two integers, so I can use that for 3 and 5. Then, the multiply function would take the result of that addition and multiply by 8. So first, call add with a=3 and b=5. That gives 8. Then, call multiply with a=8 (the result from add) and b=8. That should give 64. \n\nAlternatively, maybe there's a way to do it in one step, but the functions don't have a combined operation. So I need to break it down into two steps. First add 3 and 5, then multiply the sum by 8. Yep, that's the correct approach. Let me make sure I'm using the right parameters for each function. The add function's parameters are a and b, both integers. Multiply also takes a and b as integers. So the first tool call is add with 3 and 5, then multiply with the result and 8. Alright, that should work.\n",
+                "reasoning_content": "\nOkay, let's see. The user wants me to calculate (3 + 5) * 8. Hmm, first I need to figure out the order of operations here. The expression inside the parentheses is 3 + 5, which should be done first. So 3 plus 5 equals 8. Then, I multiply that result by 8. Wait, so that's 8 multiplied by 8. But wait, maybe I should check if the functions available can handle this.\n\nLooking at the tools provided, there's add, multiply, and divide functions. The add function takes two integers, so I can use that for 3 and 5. Then, the multiply function would take the result of that addition and multiply by 8. So first, call add with a=3 and b=5. That gives 8. Then, call multiply with a=8 (the result from add) and b=8. That should give 64. \n\nAlternatively, maybe there's a way to do it in one step, but the functions don't have a combined operation. So I need to break it down into two steps. First add 3 and 5, then multiply the sum by 8. Yep, that's the correct approach. Let me make sure I'm using the right parameters for each function. The add function's parameters are a and b, both integers. Multiply also takes a and b as integers. So the first tool call is add with 3 and 5, then multiply with the result and 8. Alright, that should work.\n"
+            },
+            "logprobs": null,
+            "finish_reason": "tool_calls",
+            "stop_reason": null,
+            "token_ids": null
+        }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+        "prompt_tokens": 377,
+        "total_tokens": 755,
+        "completion_tokens": 378,
+        "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+}
